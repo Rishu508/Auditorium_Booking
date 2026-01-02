@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking Status | BookMyHall</title>
+
+    <link rel="stylesheet" href="../css/booking-status.css" />
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="../landingpg.html">
+                <img src="../assets/images/Logoimg.png" alt="Logo">
+            </a>
+            <span>BookMyHall</span>
+        </div>
+
+        <nav class="nav-links">
+            <a href="../landingpg.html#home">Home</a>
+            <a href="../landingpg.html#about">About Us</a>
+            <a href="../landingpg.html#services">Services</a>
+            <a href="booking-status.html">Status</a>
+        </nav>
+
+        <div class="nav-actions">
+            <a href="../pages/signup.html">
+                <button class="btn signup">Sign up</button>
+            </a>
+        </div>
+    </header>
+
+    <!-- ================= STATUS ================= -->
+    <main class="status-wrapper">
+
+        <!-- Change class dynamically: confirmed | pending | failed -->
+        <div class="status-card" id="statusCard">
+
+            <span class="status-badge" id="statusBadge">LOADING...</span>
+
+            <div class="status-icon" id="statusIcon">⏳</div>
+
+            <h1 id="statusTitle">Checking Status...</h1>
+
+            <!-- Booking ID -->
+            <div class="booking-id">
+                Booking ID: <span id="bookingId">...</span>
+            </div>
+
+            <p class="status-text" id="statusText">
+                Please wait while we fetch your booking details.
+            </p>
+
+            <div class="booking-details">
+                <div>
+                    <span>Date</span>
+                    <strong id="dateText">...</strong>
+                </div>
+                <div>
+                    <span>Time</span>
+                    <strong id="timeText">...</strong>
+                </div>
+            </div>
+
+            <a href="#" class="primary-btn" id="actionBtn">Go to Dashboard</a>
+
+        </div>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="site-footer" id="contact">
+        <div class="footer-inner">
+
+            <div class="footer-brand">
+                <h3>BookMyHall</h3>
+                <p>
+                    Premium auditoriums for conferences, events,
+                    and unforgettable experiences.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Company</h4>
+                <a href="#">About</a>
+                <a href="#">Rooms</a>
+                <a href="#">Contact</a>
+            </div>
+
+            <div class="footer-links">
+                <h4>Support</h4>
+                <a href="#">Help Center</a>
+                <a href="#">Terms</a>
+                <a href="#">Privacy</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2025 <span class="brand">BookMyHall</span>. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="../JS/api.js"></script>
+    <script src="../js/Booking-status.js"></script>
+</body>
+
+</html>

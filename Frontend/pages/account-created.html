@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Created</title>
+
+    <style>
+        /* Global reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        /* Background */
+        body {
+            background: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Main container */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Card */
+        .card {
+            background: #fff;
+            width: 380px;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(255, 140, 0, 0.2);
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        /* Icon */
+        .icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: #ff8c00;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 45px;
+            font-weight: bold;
+            margin: 0 auto 20px;
+            animation: pop 0.4s ease-out;
+        }
+
+        /* Heading */
+        .card h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        /* Text */
+        .card p {
+            color: #555;
+            font-size: 16px;
+            margin-bottom: 25px;
+        }
+
+        /* Button */
+        .btn {
+            width: 100%;
+            padding: 12px 0;
+            background: #ff8c00;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pop {
+            0% {
+                transform: scale(0.6);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="card">
+            <div class="icon">✔</div>
+            <h1>Account Created!</h1>
+            <p>Your account has been successfully created.</p>
+        </div>
+    </div>
+
+    <Script>
+        setTimeout(() => {
+            window.location.href = "../index.html"
+        }, 2500);
+    </Script>
+</body>
+
+</html>

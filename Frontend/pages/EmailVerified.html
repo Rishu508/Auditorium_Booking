@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email Verified | BookMyHall</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #fff7f0, #ffffff);
+            overflow: hidden;
+        }
+
+        .container {
+            background: #ffffff;
+            width: 100%;
+            max-width: 420px;
+            padding: 40px 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            animation: fadeIn 1s ease forwards;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #ff7a00;
+            opacity: 0;
+            animation: slideDown 0.8s ease forwards 0.2s;
+        }
+
+        .logo span {
+            color: #333;
+        }
+
+        .icon {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 25px;
+            background: rgba(255, 122, 0, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: scale(0);
+            animation: popIn 0.6s ease forwards 0.5s;
+        }
+
+        .icon svg {
+            width: 50px;
+            height: 50px;
+            fill: #ff7a00;
+        }
+
+        h1 {
+            font-size: 22px;
+            color: #222;
+            margin-bottom: 10px;
+            opacity: 0;
+            animation: fadeIn 0.8s ease forwards 0.8s;
+        }
+
+        p {
+            font-size: 14.5px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            opacity: 0;
+            animation: fadeIn 0.8s ease forwards 1s;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 22px;
+            background: #ff7a00;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: slideUp 0.6s ease forwards 1.3s;
+        }
+
+        .btn:hover {
+            background: #e86e00;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(255, 122, 0, 0.35);
+        }
+
+        .footer {
+            margin-top: 25px;
+            font-size: 12px;
+            color: #aaa;
+            opacity: 0;
+            animation: fadeIn 0.8s ease forwards 1.5s;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideDown {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes popIn {
+            to {
+                transform: scale(1);
+            }
+        }
+
+        /* Confetti */
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #ff7a00;
+            animation: confettiFall 3s linear infinite;
+            opacity: 0.8;
+        }
+
+        @keyframes confettiFall {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            100% {
+                transform: translateY(600px) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo">Book<span>MyHall</span></div>
+
+        <div class="icon">
+            <svg viewBox="0 0 24 24">
+                <path
+                    d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm-1.2 17.2l-5-5 1.7-1.7 3.3 3.3 6.5-6.5 1.7 1.7-8.2 8.2z" />
+            </svg>
+        </div>
+
+        <h1>Email Verified Successfully 🎉</h1>
+        <p>
+            Your email address has been verified.
+            You can now book halls, manage your events, and explore everything
+            <strong>BookMyHall</strong> has to offer.
+        </p>
+
+        <a href="../landingpg.html" class="btn">Go to Home Page</a>
+
+        <div class="footer">
+            © 2025 BookMyHall. All rights reserved.
+        </div>
+    </div>
+
+    <!-- Confetti Elements -->
+    <script>
+        const colors = ['#ff7a00', '#ffb347', '#ff5722', '#ff9e80'];
+        for (let i = 0; i < 50; i++) {
+            const confetti = document.createElement('div');
+            confetti.classList.add('confetti');
+            confetti.style.left = Math.random() * window.innerWidth + 'px';
+            confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            confetti.style.animationDelay = Math.random() * 3 + 's';
+            confetti.style.width = confetti.style.height = Math.random() * 8 + 5 + 'px';
+            document.body.appendChild(confetti);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email Verification</title>
+
+    <!-- Popup CSS -->
+    <link rel="stylesheet" href="../css/email-verify-popup.css">
+</head>
+
+<body>
+
+    <!-- Auto open toggle -->
+    <input type="checkbox" id="verify-popup-toggle" checked>
+
+    <!-- Overlay -->
+    <div class="verify-overlay">
+        <div class="verify-popup">
+
+            <div class="popup-header"></div>
+
+            <h2>Verify your email</h2>
+
+            <p>
+                We’ve sent a verification link to
+                <span class="user-email">youremail@example.com</span>.
+                <br>
+                Please verify to continue using <strong>BookMyHall</strong>.
+            </p>
+
+            <div class="popup-actions">
+                <button class="btn-primary">Resend Email</button>
+                <label for="verify-popup-toggle" class="btn-secondary">Close</label>
+            </div>
+
+        </div>
+    </div>
+    <script src="../JS/email-verify-popup.js"></script>
+</body>
+
+</html>

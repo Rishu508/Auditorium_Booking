@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Book Auditorium | BookMyHall</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/BookingPage.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="../landingpg.html">
+                <img src="../assets/images/Logoimg.png" alt="Logo">
+            </a>
+            <span>BookMyHall</span>
+        </div>
+
+        <nav class="nav-links">
+            <a href="../landingpg.html#home">Home</a>
+            <a href="../landingpg.html#about">About Us</a>
+            <a href="../landingpg.html#services">Services</a>
+            <a href="booking-status.html">Status</a>
+        </nav>
+
+        <div class="nav-actions">
+            <a href="../pages/signup.html">
+                <button class="btn signup">Sign up</button>
+            </a>
+        </div>
+    </header>
+
+
+    <!-- ===== HERO ===== -->
+    <section class="booking-hero">
+        <h1>Reserve Your Auditorium</h1>
+        <p>Select a date and time to secure your perfect venue</p>
+    </section>
+
+    <!-- ===== MAIN APP ===== -->
+    <main class="app">
+
+        <!-- ===== CALENDAR CARD ===== -->
+        <section class="calendar-card">
+            <div class="calendar-header">
+                <button id="prevMonth">‹</button>
+                <h2 id="monthYear"></h2>
+                <button id="nextMonth">›</button>
+            </div>
+
+            <div class="weekdays">
+                <span>Sun</span><span>Mon</span><span>Tue</span>
+                <span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+            </div>
+
+            <div class="days"></div>
+
+            <!-- BOOKINGS -->
+            <div class="booked-slots" id="bookedSlots">
+                <span class="hint">Select a date to view bookings</span>
+            </div>
+
+            <!-- INFO STRIP -->
+            <div class="booking-info">
+                <div class="features">
+                    <span> Instant confirmation</span>
+                    <span> No double bookings</span>
+                    <span> Secure scheduling</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FORM CARD ===== -->
+        <section class="form-card">
+            <h1>Auditorium Booking</h1>
+            <form id="bookingform">
+                <input type="text" placeholder="Event name" id="eventName">
+
+                <input type="date" id="dateInput" readonly>
+
+                <div class="time-row">
+                    <div>
+                        <label>Start Time</label>
+                        <input type="time" id="startTime">
+                    </div>
+                    <div>
+                        <label>End Time</label>
+                        <input type="time" id="endTime">
+                    </div>
+                </div>
+
+                <textarea rows="4" placeholder="Purpose" id="purpose"></textarea>
+
+                <button class="submit">Submit Booking</button>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <!-- ================= FOOTER ================= -->
+    <footer class="site-footer" id="contact">
+        <div class="footer-inner">
+
+            <div class="footer-brand">
+                <h3>BookMyHall</h3>
+                <p>
+                    Premium auditoriums for conferences, events,
+                    and unforgettable experiences.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Company</h4>
+                <a href="#">About</a>
+                <a href="#">Rooms</a>
+                <a href="#">Contact</a>
+            </div>
+
+            <div class="footer-links">
+                <h4>Support</h4>
+                <a href="#">Help Center</a>
+                <a href="#">Terms</a>
+                <a href="#">Privacy</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2025 <span class="brand">BookMyHall</span>. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <div id="toast"></div>
+    <script src="../JS/api.js"></script>
+    <script src="../JS/Booked.js"></script>
+    <script src="../JS/BookingForm.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,161 @@
+   /* ================= RESET ================= */
+   * {
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+       font-family: "Inter", system-ui, -apple-system, sans-serif;
+   }
+
+   /* ================= PAGE BACKGROUND ================= */
+   body {
+       min-height: 100vh;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       background: radial-gradient(circle at top, #fff7ed, transparent 40%),
+           linear-gradient(120deg, #f9fafb, #e5e7eb);
+   }
+
+   /* ================= OVERLAY ================= */
+   .verify-overlay {
+       position: fixed;
+       inset: 0;
+       background: rgba(17, 24, 39, 0.25);
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       opacity: 0;
+       pointer-events: none;
+       transition: opacity 0.3s ease;
+       z-index: 9999;
+   }
+
+   /* ================= POPUP ================= */
+   .verify-popup {
+       width: 92%;
+       max-width: 460px;
+       background: #ffffff;
+       border-radius: 20px;
+       padding: 40px 36px 34px;
+       text-align: center;
+       border: 1px solid #e5e7eb;
+       box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+       transform: translateY(30px) scale(0.95);
+       transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+       position: relative;
+   }
+
+   /* Top highlight */
+   .popup-header {
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 5px;
+       background: linear-gradient(90deg, #ff7a00, #ffb703);
+       border-radius: 20px 20px 0 0;
+   }
+
+   /* ================= TEXT ================= */
+   .verify-popup h2 {
+       margin-top: 16px;
+       font-size: 24px;
+       font-weight: 700;
+       color: #111827;
+       letter-spacing: -0.02em;
+   }
+
+   .verify-popup p {
+       margin-top: 14px;
+       font-size: 15px;
+       color: #6b7280;
+       line-height: 1.7;
+       max-width: 360px;
+       margin-left: auto;
+       margin-right: auto;
+   }
+
+   /* Email highlight */
+   .user-email {
+       display: inline-block;
+       margin-top: 12px;
+       padding: 8px 16px;
+       background: rgba(255, 122, 0, 0.12);
+       border: 1px solid rgba(255, 122, 0, 0.35);
+       border-radius: 999px;
+       font-weight: 600;
+       font-size: 14px;
+       color: #111827;
+   }
+
+   /* ================= ACTIONS ================= */
+   .popup-actions {
+       display: flex;
+       gap: 16px;
+       justify-content: center;
+       margin-top: 34px;
+   }
+
+   /* Buttons */
+   .btn-primary,
+   .btn-secondary {
+       min-width: 140px;
+       padding: 13px 22px;
+       border-radius: 14px;
+       font-size: 14px;
+       font-weight: 600;
+       cursor: pointer;
+       transition: all 0.25s ease;
+   }
+
+   /* Primary */
+   .btn-primary {
+       background: #ff7a00;
+       color: #fff;
+       border: none;
+       box-shadow: 0 10px 28px rgba(255, 122, 0, 0.45);
+   }
+
+   .btn-primary:hover {
+       transform: translateY(-2px);
+       box-shadow: 0 16px 36px rgba(255, 122, 0, 0.55);
+   }
+
+   /* Secondary */
+   .btn-secondary {
+       background: #ffffff;
+       color: #111827;
+       border: 1px solid #e5e7eb;
+   }
+
+   .btn-secondary:hover {
+       background: #f9fafb;
+   }
+
+   /* ================= TOGGLE ================= */
+   #verify-popup-toggle {
+       display: none;
+   }
+
+   #verify-popup-toggle:checked+.verify-overlay {
+       opacity: 1;
+       pointer-events: auto;
+   }
+
+   #verify-popup-toggle:checked+.verify-overlay .verify-popup {
+       transform: translateY(0) scale(1);
+   }
+
+   /* Smooth hide transition */
+   .verify-overlay.hide {
+       opacity: 0;
+       /* fade out */
+       pointer-events: none;
+       /* disable interaction */
+       transition: opacity 0.4s ease;
+   }
+
+   .verify-overlay .verify-popup {
+       transform: translateY(30px) scale(0.95);
+       transition: transform 0.4s ease, opacity 0.4s ease;
+   }

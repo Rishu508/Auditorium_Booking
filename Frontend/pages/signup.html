@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Signup</title>
+    <link rel="stylesheet" href="../css/CommonAuth.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="signup-page">
+ 
+    <div class="container">
+
+
+        <div class="left-section">
+            <div class="overlay-text">
+                <h1>Where Every Event<br>Finds Its Stage</h1>
+            </div>
+        </div>
+
+
+        <div class="right-section">
+             <div class="brand-header">
+                    <img src="../assets/images/Logoimg.png" alt="Logo" class="brand-logo">
+                    <span class="brand-name">BookMyHall</span>
+                </div>
+            <h2>Create an account</h2>
+            <p class="switch">Already have an account? <a href="login.html">Login</a></p>
+
+            <form>
+
+                <div class="input-group">
+                    <input type="text" id="fname" placeholder="First name">
+                    <input type="text" id="lname" placeholder="Last name">
+                </div>
+
+                <input type="email" id="email" placeholder="Email">
+                <input type="password" id="password" placeholder="Enter your password">
+
+
+
+                <button class="btn-primary" type="submit">Create account</button>
+
+                <div class="divider">
+                    <span>or signup with</span>
+                </div>
+
+                <div class="social-buttons">
+                    <button type="button" class="googlebtn">Google</button>
+
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <div id="toast" class="toast">This is a toast</div>
+    <script src="../JS/Signup.js"></script>
+</body>
+
+</html>

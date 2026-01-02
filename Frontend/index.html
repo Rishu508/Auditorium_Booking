@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/landingpg.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <img src="assets/images/Logoimg.png" alt="Logo">
+            <span>BookMyHall</span>
+        </div>
+        <nav class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#services">Services</a>
+            <a href="./booking/booking-status.html">Status</a>
+        </nav>
+        <div class="nav-actions">
+            <a href="pages/signup.html">
+                <button class="btn signup">Sign up</button>
+            </a>
+        </div>
+    </header>
+    <div class="hero" id="home">
+        <div class="hero-left reveal">
+            <h1>
+                Find The <span>Auditorium</span> You Need
+            </h1>
+            <p>Book auditorium for events, conferences and more. Flexible rooms, modern equipment, and a friendly team
+                ready to help</p>
+            <a href="booking/bookingPage.html" class="hero-link">
+                <button class="btn hero-btn">Book Now</button>
+            </a>
+
+
+            <div class="hero-stats">
+                <div class="stats">
+                    <div class="stats-number">12+</div>
+                    <div class="stats-label">Duplex Rooms</div>
+                </div>
+                <div class="stats">
+                    <div class="stats-number">08+</div>
+                    <div class="stats-label">Class Rooms</div>
+                </div>
+                <div class="stats">
+                    <div class="stats-number">10+</div>
+                    <div class="stats-label">Outside Rooms</div>
+                </div>
+
+            </div>
+        </div>
+        <div class="hero-right">
+            <img src="img3(our services).png" alt="Auditorium building">
+        </div>
+    </div>
+    <section class="about-section reveal" id="about">
+        <div class="about-inner">
+
+            <div class="about-image">
+                <img src="assets/about/About1-min.png" alt="">
+            </div>
+
+            <div class="about-card">
+                <h2>About Our Auditoriums</h2>
+                <p>
+                    Experience modern, spacious, and fully equipped auditoriums
+                    designed for conferences, celebrations, and performances.
+                </p>
+                <button class="about-btn">Read More</button>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="services-section" id="services">
+        <h2 class="services-title">Our Services</h2>
+        <p class="services-subtitle">
+            We offer complete event support – equipment, audio systems, seating, and conference setup
+        </p>
+
+        <div class="services-grid">
+
+            <div class="service-card stage reveal">
+                <div class="service-bg"></div>
+                <div class="service-content">
+                    <div class="service-icon">🎭</div>
+                    <h3>Stage Equipment</h3>
+                    <p>Professional staging, lighting, and setup designed for events of any scale.</p>
+                </div>
+            </div>
+
+            <div class="service-card av reveal">
+                <div class="service-bg"></div>
+                <div class="service-content">
+                    <div class="service-icon">🎧</div>
+                    <h3>AV Systems</h3>
+                    <p>Crystal-clear sound and high-definition visuals for impactful presentations.</p>
+                </div>
+            </div>
+
+            <div class="service-card seating reveal">
+                <div class="service-bg"></div>
+                <div class="service-content">
+                    <div class="service-icon">💺</div>
+                    <h3>Seating Capacity</h3>
+                    <p>Flexible seating layouts ensuring comfort, clarity, and visibility.</p>
+                </div>
+            </div>
+
+            <div class="service-card conference reveal">
+                <div class="service-bg"></div>
+                <div class="service-content">
+                    <div class="service-icon">🧑‍💼</div>
+                    <h3>Conference Setup</h3>
+                    <p>End-to-end conference arrangements with modern equipment.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="site-footer" id="Contact">
+        <div class="footer-inner">
+
+            <div class="footer-brand">
+                <h3>BookMyHall</h3>
+                <p>
+                    Premium auditoriums for conferences, events,
+                    and unforgettable experiences.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Company</h4>
+                <a href="#">About</a>
+                <a href="#">Rooms</a>
+                <a href="#">Contact</a>
+            </div>
+
+            <div class="footer-links">
+                <h4>Support</h4>
+                <a href="#">Help Center</a>
+                <a href="#">Terms</a>
+                <a href="#">Privacy</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2025 <span class="brand">BookMyHall</span>. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        const reveals = document.querySelectorAll('.reveal');
+
+        const revealOnScroll = () => {
+            reveals.forEach(el => {
+                const windowHeight = window.innerHeight;
+                const elementTop = el.getBoundingClientRect().top;
+                const elementVisible = 120;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    el.classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll();
+    </script>
+
+</body>
+
+</html>
