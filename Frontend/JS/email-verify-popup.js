@@ -54,6 +54,6 @@ closebtn.addEventListener("click", () => {
   // Optional: actually remove from DOM after transition
   setTimeout(() => {
     // redirect or do other stuff
-    window.location.href = "../landingpg.html";
+    window.location.href = "../index.html";
   }, 400); // match transition duration
 });
