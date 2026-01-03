@@ -1,4 +1,6 @@
-const transporter = require("../config/Nodemailer.config");
+const sgmail = require("@sendgrid/mail");
+
+sgmail.setApiKey(process.env.SENDGRID_API_KEY);
 
 const EmailVerify = async (Firstname, Lastname, email, verificationLink) => {
   const Fullname = `${Firstname} ${Lastname}`;
@@ -92,24 +94,25 @@ const EmailVerify = async (Firstname, Lastname, email, verificationLink) => {
   </div>
   `;
   try {
-    transporter.sendMail({
-      from: `"BookMyHall " <${process.env.FROM_EMAIL}>`,
-      to: email,
+    await sgmail.send({
+      to,
+      from: process.env.SENDGRID_FROM_EMAIL,
       subject: "Email Verification",
       html: htmltemplate,
     });
-
-    console.log("Email verification send successfully");
   } catch (error) {
-    console.log("Error occurs :".error);
+    console.log(error);
+    return res
+      .status(500)
+      .json({ message: "Failed to send verification email" });
   }
 };
 
 const PassReset = async (email, reseturl) => {
   try {
-    transporter.sendMail({
-      from: `"BookMyHall " <${process.env.FROM_EMAIL}>`,
-      to: email,
+    await sgmail.send({
+      to,
+      from: process.env.SENDGRID_FROM_EMAIL,
       subject: "Password Reset",
       html: `
   <div style="
@@ -319,9 +322,9 @@ const BookingRequest = async (
   `;
 
   try {
-    await transporter.sendMail({
-      from: `"BookMyHall" <${process.env.FROM_EMAIL}>`,
-      to: AdminEmail,
+    await sgmail.send({
+      to,
+      from: process.env.SENDGRID_FROM_EMAIL,
       subject: "New Booking Request Received",
       html: htmltemplate,
     });
@@ -432,9 +435,9 @@ const BookingApproved = async (
   `;
 
   try {
-    await transporter.sendMail({
-      from: `"BookMyHall" <${process.env.FROM_EMAIL}>`,
-      to: UserEmail,
+    await sgmail.send({
+      to,
+      from: process.env.SENDGRID_FROM_EMAIL,
       subject: "Your Booking Has Been Approved! 🎉",
       html: htmltemplate,
     });
@@ -546,9 +549,9 @@ const BookingRejected = async (
   `;
 
   try {
-    await transporter.sendMail({
-      from: `"BookMyHall" <${process.env.FROM_EMAIL}>`,
+    await sgmail.send({
       to: UserEmail,
+      from: process.env.SENDGRID_FROM_EMAIL,
       subject: "Your Booking Has Been Rejected ❌",
       html: htmltemplate,
     });
